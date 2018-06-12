@@ -27,10 +27,10 @@ public class DetailPerrosFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static DetailPerrosFragment newInstance(String mPerrosId) {
+    public static DetailPerrosFragment newInstance(String perrosId) {
         DetailPerrosFragment fragment = new DetailPerrosFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_ID, mPerrosId);
+        args.putString(ARG_ID, perrosId);
         fragment.setArguments(args);
         return fragment;
     }
