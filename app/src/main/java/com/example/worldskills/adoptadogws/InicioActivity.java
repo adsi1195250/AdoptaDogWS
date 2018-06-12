@@ -101,6 +101,8 @@ public class InicioActivity extends AppCompatActivity
             case R.id.nav_gallery:
                 startActivity(new Intent(this, PerrosActivity.class));
                 break;
+            case R.id.map:
+                startActivity(new Intent());
         }
     }
 }
