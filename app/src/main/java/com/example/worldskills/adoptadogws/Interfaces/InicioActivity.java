@@ -84,7 +84,7 @@ public class InicioActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_gallery){
-            startActivity(new Intent(this, PerrosActivity.class));
+            //startActivity(new Intent(this, PerrosActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,7 +99,7 @@ public class InicioActivity extends AppCompatActivity
                 startActivity(new Intent(this, InicioActivity.class));
                 break;
             case R.id.nav_gallery:
-                startActivity(new Intent(this, PerrosActivity.class));
+                //startActivity(new Intent(this, PerrosActivity.class));
                 break;
             case R.id.map:
                 startActivity(new Intent());
