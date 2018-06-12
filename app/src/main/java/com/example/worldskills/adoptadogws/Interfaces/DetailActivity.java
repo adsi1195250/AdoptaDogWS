@@ -9,9 +9,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.worldskills.adoptadogws.Data.DBSqlite;
+import com.example.worldskills.adoptadogws.Data.Entidades;
+import com.example.worldskills.adoptadogws.DetailFragment;
 import com.example.worldskills.adoptadogws.R;
-
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -26,15 +33,15 @@ public class DetailActivity extends AppCompatActivity {
 
         String id = getIntent().getStringExtra(PerrosActivity.EXTRA_ID);
 
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+        DetailFragment fragment = (DetailFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.perros_detail_container);
+        if (fragment == null){
+            fragment = DetailFragment.newInstance(id);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.perros_detail_container, fragment)
+                    .commit();
+        }
     }
 
     public boolean onSupportNavigateUp(){
