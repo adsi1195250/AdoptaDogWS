@@ -33,10 +33,10 @@ public class DetailActivity extends AppCompatActivity {
 
         String id = getIntent().getStringExtra(PerrosActivity.EXTRA_ID);
 
-        DetailFragment fragment = (DetailFragment) getSupportFragmentManager()
+        DetailPerrosFragment fragment = (DetailPerrosFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.perros_detail_container);
         if (fragment == null){
-            fragment = DetailFragment.newInstance(id);
+            fragment = DetailPerrosFragment.newInstance(id);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.perros_detail_container, fragment)
