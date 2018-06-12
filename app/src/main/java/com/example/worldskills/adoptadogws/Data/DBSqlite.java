@@ -1,6 +1,7 @@
 package com.example.worldskills.adoptadogws.Data;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -61,6 +62,32 @@ public class DBSqlite extends SQLiteOpenHelper {
     private long insertPerros(SQLiteDatabase db, Entidades entidades) {
         return db.insert(Relacion.GeneralEntry.TABLE_NAME,
                 null, entidades.toContentValues());
+    }
+
+    public Cursor getAllPerros(){
+        return getReadableDatabase().query(
+                Relacion.GeneralEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+    }
+
+
+    public Cursor getByIdPerros(String mPerrosId){
+        Cursor c =  getReadableDatabase().query(
+                Relacion.GeneralEntry.TABLE_NAME,
+                null,
+                Relacion.GeneralEntry.ID,
+                new String[]{mPerrosId},
+                null,
+                null,
+                null
+        );
+        return c;
     }
 
     @Override
