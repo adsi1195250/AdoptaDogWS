@@ -49,8 +49,8 @@ public class ContactameActivity extends AppCompatActivity
         correo.getEditText();
 
         ArrayList<String> objects = new ArrayList<>();
-        objects.add("Apadrino");
-        objects.add("Adopto");
+        objects.add("Adoptar");
+        objects.add("Apadrinar");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_spinner_item, objects);
         spinner.setAdapter(adapter);
 
