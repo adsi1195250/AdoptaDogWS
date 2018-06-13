@@ -32,11 +32,11 @@ public class PerrosCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, final Context context, Cursor c) {
-        TextView nombreText = view.findViewById(R.id.id_nombre);
-        TextView edadText = view.findViewById(R.id.id_edad);
-        TextView razaText = view.findViewById(R.id.id_raza);
-        TextView tipoText = view.findViewById(R.id.id_tipo);
-        final ImageView imageView = view.findViewById(R.id.id_imagen);
+        TextView nombreText = view.findViewById(R.id.idnombre);
+        TextView edadText = view.findViewById(R.id.idedad);
+        TextView razaText = view.findViewById(R.id.idraza);
+        TextView tipoText = view.findViewById(R.id.idtipo);
+        final ImageView imageView = view.findViewById(R.id.idimagen);
 
 
         String nombre = c.getString(c.getColumnIndex(Relacion.GeneralEntry.NOMBRE));

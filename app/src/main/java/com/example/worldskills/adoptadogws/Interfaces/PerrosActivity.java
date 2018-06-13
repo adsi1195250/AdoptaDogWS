@@ -13,17 +13,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.worldskills.adoptadogws.Adapter.PerrosCursorAdapter;
 import com.example.worldskills.adoptadogws.Data.DBSqlite;
 import com.example.worldskills.adoptadogws.Data.Relacion;
 import com.example.worldskills.adoptadogws.R;
-import com.example.worldskills.adoptadogws.adapter.perrosCursorAdapter;
 import com.example.worldskills.adoptadogws.Data.Relacion;
 
 public class PerrosActivity extends AppCompatActivity {
     public static final String EXTRA_ID = "extra_id";
     private DBSqlite sqlite;
     private ListView listView;
-    private perrosCursorAdapter cursorAdapter;
+    private PerrosCursorAdapter cursorAdapter;
 
     public PerrosActivity() {
     }
@@ -36,7 +36,7 @@ public class PerrosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perros);
         sqlite = new DBSqlite(this);
         listView = findViewById(R.id.listViewPerros);
-        cursorAdapter = new perrosCursorAdapter(this,null);
+        cursorAdapter = new PerrosCursorAdapter(this,null);
 
         listView.setAdapter(cursorAdapter);
 
@@ -52,6 +52,11 @@ public class PerrosActivity extends AppCompatActivity {
         loadPerros();
     }
 
+    private void loadPerros() {
+        new perrosLoadTask().execute();
+    }
+
+
     private void showDetailtScreen(String currentId) {
 
         Intent intent = new Intent(this, DetailActivity.class);
@@ -65,27 +70,15 @@ public class PerrosActivity extends AppCompatActivity {
             return sqlite.getAllPerros();
         }
 
-    private void loadPerros() {
-        new perrosLoadTask().execute();
-    }
 
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.getCount() > 0){
                 cursorAdapter.swapCursor(cursor);
-
             }else{
 
             }
         }
 
     }
-
-    private void showDetailScreen(String currentId) {
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(PerrosActivity.EXTRA_ID, currentId);
-        startActivityForResult(intent, 2);
-    }
-
-
 }

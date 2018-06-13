@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.worldskills.adoptadogws.Maps.MapsActivity;
 import com.example.worldskills.adoptadogws.R;
 
 public class InicioActivity extends AppCompatActivity
@@ -99,10 +100,14 @@ public class InicioActivity extends AppCompatActivity
                 startActivity(new Intent(this, InicioActivity.class));
                 break;
             case R.id.nav_gallery:
-                //startActivity(new Intent(this, PerrosActivity.class));
+                startActivity(new Intent(this, PerrosActivity.class));
                 break;
-            case R.id.map:
-                startActivity(new Intent());
+            case R.id.nav_slideshow:
+                //startActivity(new Intent(this, MapsActivity.class));
+                break;
+            case R.id.nav_manage:
+                startActivity(new Intent(this, MapsActivity.class));
+                break;
         }
     }
 }

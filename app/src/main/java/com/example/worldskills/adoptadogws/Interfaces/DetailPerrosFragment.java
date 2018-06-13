@@ -59,12 +59,12 @@ public class DetailPerrosFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_detail_perros, container, false);
         sqlite = new DBSqlite(getActivity());
-        nombre = view.findViewById(R.id.idnombre);
-        edad = view.findViewById(R.id.idedad);
-        raza = view.findViewById(R.id.idraza);
-        tipo = view.findViewById(R.id.idtipo);
-        //descripcion = view.findViewById(R.id.iddescripcion);
-        //collapsingToolbarLayout = view.findViewById(R.id.colla)
+        nombre = view.findViewById(R.id.id_nombre);
+        edad = view.findViewById(R.id.id_edad);
+        raza = view.findViewById(R.id.id_raza);
+        tipo = view.findViewById(R.id.id_tipo);
+        descripcion = view.findViewById(R.id.id_descripcion);
+        collapsingToolbarLayout = view.findViewById(R.id.toolbar_layout);
         loadPerros();
 
         return view;
@@ -97,6 +97,7 @@ public class DetailPerrosFragment extends Fragment {
     }
 
     private void showPerros(Entidades entidades) {
+        collapsingToolbarLayout.setTitle(entidades.getNombre());
         nombre.setText(entidades.getNombre());
         edad.setText(entidades.getEdad());
         raza.setText(entidades.getRaza());

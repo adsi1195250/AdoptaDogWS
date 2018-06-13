@@ -40,8 +40,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(4.676778, -74.048290);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Carrera 13 entre 93A y 93B"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        LatLng chapinero = new LatLng(4.676778, -74.048290);
+        mMap.addMarker(new MarkerOptions().position(chapinero).title("Avenida Calle 63, Chapinero Central"));
+
+        LatLng simonBolivar = new LatLng(4.657815,-74.093407);
+        mMap.addMarker(new MarkerOptions().position(simonBolivar).title("Parque Simón Bolívar Bogotá"));
+
+        LatLng corferias = new LatLng(4.630271, -74.090962);
+        mMap.addMarker(new MarkerOptions().position(corferias).title("Carrera. 37 #24-67-Corferias"));
+
+        LatLng museoOro = new LatLng(4.601992, -74.072113);
+        mMap.addMarker(new MarkerOptions().position(museoOro).title("Carrera. 6 #15-88- Museo del Oro"));
+
+        LatLng casaNariño = new LatLng(4.595544, -74.077561);
+        mMap.addMarker(new MarkerOptions().position(casaNariño).title("Carrera. 37 #24-67-Corferias"));
+
+        LatLng  salitrePlaza = new LatLng(4.652067, -74.110232);
+        mMap.addMarker(new MarkerOptions().position(salitrePlaza).title("Centro Comercial Salitre Plaza"));
     }
 }
