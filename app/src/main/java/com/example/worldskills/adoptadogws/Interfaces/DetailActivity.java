@@ -1,5 +1,9 @@
 package com.example.worldskills.adoptadogws.Interfaces;
 
+/**
+ * Created by Anderson on 12-Jun-18.
+ */
+
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
