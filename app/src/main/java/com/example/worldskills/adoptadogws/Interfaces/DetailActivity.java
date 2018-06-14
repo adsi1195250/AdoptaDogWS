@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.worldskills.adoptadogws.Data.DBSqlite;
 import com.example.worldskills.adoptadogws.Data.Entidades;
-import com.example.worldskills.adoptadogws.Interfaces.DetailPerrosFragment;
 import com.example.worldskills.adoptadogws.R;
 
 public class DetailActivity extends AppCompatActivity {
@@ -48,4 +47,4 @@ public class DetailActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-    }
+}
