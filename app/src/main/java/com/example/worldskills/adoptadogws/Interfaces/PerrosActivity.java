@@ -38,6 +38,21 @@ public class PerrosActivity extends AppCompatActivity {
         listView = findViewById(R.id.listViewPerros);
         cursorAdapter = new PerrosCursorAdapter(this,null);
 
+        /*listView.setAdapter(cursorAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                Cursor cursor = (Cursor) cursorAdapter.getItem(i);
+                String currentId = cursor.getString(
+                        cursor.getColumnIndex(Relación.GeneralEntry.ID));
+
+                showDetailScreen(currentId);
+
+            }
+        });*/
+
+
         listView.setAdapter(cursorAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,11 +67,6 @@ public class PerrosActivity extends AppCompatActivity {
         loadPerros();
     }
 
-    private void loadPerros() {
-        new perrosLoadTask().execute();
-    }
-
-
     private void showDetailtScreen(String currentId) {
 
         Intent intent = new Intent(this, DetailActivity.class);
@@ -64,21 +74,49 @@ public class PerrosActivity extends AppCompatActivity {
         startActivityForResult(intent, 2);
     }
 
+    private void loadPerros() {
+        new perrosLoadTask().execute();
+    }
+
+
     private class perrosLoadTask extends AsyncTask<Void, Void, Cursor>{
         @Override
         protected Cursor doInBackground(Void... voids) {
             return sqlite.getAllPerros();
         }
 
-
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.getCount() > 0){
                 cursorAdapter.swapCursor(cursor);
-            }else{
 
+            }else{
+                //EMPTY
             }
         }
 
     }
+    /*private class PerrosLoadTask extends AsyncTask<Void, Void, Cursor> {
+
+        @Override
+        protected Cursor doInBackground(Void... voids) {
+            return sqlite.getAllPerros();
+        }
+
+        @Override
+        protected void onPostExecute(Cursor cursor) {
+            if (cursor != null && cursor.getCount() > 0) {
+                cursorAdapter.swapCursor(cursor);
+            } else {
+                // Mostrar empty state
+            }
+        }
+    }*/
+
+    private void showDetailScreen(String currentId) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(PerrosActivity.EXTRA_ID, currentId);
+        startActivityForResult(intent, 2);
+    }
+
 }

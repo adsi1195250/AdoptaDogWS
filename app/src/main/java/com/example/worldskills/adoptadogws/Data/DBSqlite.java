@@ -38,7 +38,7 @@ public class DBSqlite extends SQLiteOpenHelper {
         insertPerros(db, new Entidades("Negra", "10 Meses", "No definido", "Hembra",
                 "Esterilizada y vacunada, tamaño mediano pequeño","negra.jpg"));
         insertPerros(db, new Entidades("Linda", "6 Meses", "No definido", "Hembra",
-                "Esterilizada y vacunada, para adopción","lida.jpg"));
+                "Esterilizada y vacunada, para adopción","linda.jpg"));
         insertPerros(db, new Entidades("Canu", "14 Años", "Cruce Yorkshire", "Macho",
                 "Canu sólo ha conocido a una dueña en 14 años, pero al final, ha perdido a su compañera humana y el pobre tiene que buscar otro hogar.\n" +
                 "Se lleva bien con niños, con perros, hace sus necesidades en la calle y a pesar de su edad tiene Vuena" +
@@ -77,12 +77,12 @@ public class DBSqlite extends SQLiteOpenHelper {
     }
 
 
-    public Cursor getByIdPerros(String mPerrosId){
+    public Cursor getByIdPerros(String perrosId){
         Cursor c =  getReadableDatabase().query(
                 Relacion.GeneralEntry.TABLE_NAME,
                 null,
                 Relacion.GeneralEntry.ID,
-                new String[]{mPerrosId},
+                new String[]{perrosId},
                 null,
                 null,
                 null

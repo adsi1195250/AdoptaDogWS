@@ -68,11 +68,10 @@ public class DetailPerrosFragment extends Fragment {
         loadPerros();
 
         return view;
-
     }
 
     private void loadPerros() {
-        new loadPerrosTask();
+        new loadPerrosTask().execute();
     }
 
     private class loadPerrosTask extends AsyncTask<Void, Void, Cursor>{

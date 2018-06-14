@@ -19,6 +19,7 @@ import com.example.worldskills.adoptadogws.Data.Relacion;
 import com.example.worldskills.adoptadogws.R;
 
 public class PerrosCursorAdapter extends CursorAdapter {
+
     public PerrosCursorAdapter(Context context, Cursor c) {
         super(context, c, 0);
     }
@@ -26,8 +27,7 @@ public class PerrosCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        return inflater.inflate(R.layout.cardview_perros, parent);
-
+        return inflater.inflate(R.layout.cardview_perros, parent, false);
     }
 
     @Override

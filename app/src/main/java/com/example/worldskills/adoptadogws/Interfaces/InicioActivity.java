@@ -18,7 +18,7 @@ import com.example.worldskills.adoptadogws.Maps.MapsActivity;
 import com.example.worldskills.adoptadogws.R;
 
 public class InicioActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +26,6 @@ public class InicioActivity extends AppCompatActivity
         setContentView(R.layout.activity_inicio);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -84,18 +75,7 @@ public class InicioActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_gallery){
-            //startActivity(new Intent(this, PerrosActivity.class));
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
+        switch (item.getItemId()){
             case R.id.nav_camera:
                 startActivity(new Intent(this, InicioActivity.class));
                 break;
@@ -109,5 +89,12 @@ public class InicioActivity extends AppCompatActivity
                 startActivity(new Intent(this, MapsActivity.class));
                 break;
         }
+       // if (id == R.id.nav_gallery){
+        //    startActivity(new Intent(this, PerrosActivity.class));
+        //}
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
