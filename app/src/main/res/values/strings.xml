@@ -7,6 +7,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
+    <string name="texto_inicio">La fundación AdoptaDog busca la acogida de todos y cada uno de los perros que están en
+    adopción, el objetivo general de esta fundación, es sin lugar a duda buscar un hogar para estas mascotas, que residan en
+    un núcleo familiar de la mejor manera</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

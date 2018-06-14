@@ -57,7 +57,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(museoOro).title("Carrera. 6 #15-88- Museo del Oro"));
 
         LatLng casaNariño = new LatLng(4.595544, -74.077561);
-        mMap.addMarker(new MarkerOptions().position(casaNariño).title("Carrera. 37 #24-67-Corferias"));
+        mMap.addMarker(new MarkerOptions().position(casaNariño).title("Casa de Nariño Bogotá"));
 
         LatLng  salitrePlaza = new LatLng(4.652067, -74.110232);
         mMap.addMarker(new MarkerOptions().position(salitrePlaza).title("Centro Comercial Salitre Plaza"));
