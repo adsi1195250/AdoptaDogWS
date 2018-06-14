@@ -25,7 +25,7 @@
 
             <!-- Imagen del detalle -->
             <ImageView
-                android:id="@+id/id_imagen"
+                    android:id="@+id/id_imagen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"

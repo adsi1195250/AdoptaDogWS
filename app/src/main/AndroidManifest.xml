@@ -16,6 +16,7 @@
         <activity
             android:name=".Interfaces.InicioActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Interfaces.PerrosActivity"/>
-        <activity android:name=".Interfaces.DetailActivity"/>
-        <activity android:name=".Maps.MapsActivity"/>
+        <activity android:name=".Interfaces.PerrosActivity" />
+        <activity android:name=".Interfaces.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".Maps.MapsActivity" />
     </application>
 
 </manifest>

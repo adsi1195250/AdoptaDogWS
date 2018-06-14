@@ -63,8 +63,9 @@ public class DetailPerrosFragment extends Fragment {
         edad = view.findViewById(R.id.id_edad);
         raza = view.findViewById(R.id.id_raza);
         tipo = view.findViewById(R.id.id_tipo);
+        imagen = getActivity().findViewById(R.id.id_imagen);
         descripcion = view.findViewById(R.id.id_descripcion);
-        collapsingToolbarLayout = view.findViewById(R.id.toolbar_layout);
+        collapsingToolbarLayout = getActivity().findViewById(R.id.toolbar_layout);
         loadPerros();
 
         return view;

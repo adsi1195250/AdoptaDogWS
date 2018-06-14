@@ -60,20 +60,12 @@ public class PerrosActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cursor c = (Cursor) cursorAdapter.getItem(position);
                 String currentId = c.getString(c.getColumnIndex(Relacion.GeneralEntry.ID));
-                showDetailtScreen(currentId);
+                showDetailScreen(currentId);
             }
         });
 
         loadPerros();
     }
-
-    private void showDetailtScreen(String currentId) {
-
-        Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra(EXTRA_ID, currentId);
-        startActivityForResult(intent, 2);
-    }
-
     private void loadPerros() {
         new perrosLoadTask().execute();
     }

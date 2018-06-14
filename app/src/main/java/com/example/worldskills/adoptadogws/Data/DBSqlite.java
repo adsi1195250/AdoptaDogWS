@@ -81,7 +81,7 @@ public class DBSqlite extends SQLiteOpenHelper {
         Cursor c =  getReadableDatabase().query(
                 Relacion.GeneralEntry.TABLE_NAME,
                 null,
-                Relacion.GeneralEntry.ID,
+                Relacion.GeneralEntry.ID + " LIKE ?",
                 new String[]{perrosId},
                 null,
                 null,

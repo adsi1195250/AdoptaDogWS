@@ -6,14 +6,13 @@ import android.database.Cursor;
 import java.util.UUID;
 
 public class Entidades {
-
-    String id = "id";
-    String nombre = "nombre";
-    String edad = "edad";
-    String raza = "raza";
-    String tipo = "tipo";
-    String descripcion = "descripcion";
-    String imagen = "imagen";
+    private String id;
+    private String nombre;
+    private String edad;
+    private String raza;
+    private String tipo;
+    private String descripcion;
+    private String imagen;
 
     public Entidades(String nombre, String edad, String raza, String tipo, String descripcion, String imagen) {
         this.id = UUID.randomUUID().toString();
